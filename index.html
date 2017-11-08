@@ -3,78 +3,413 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>MoDoNER</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
-    .test{
-        border: 2px solid brown;
-        margin: 15px;
-    }
-    .test1{
-        margin: 12px 1px 0px 1px;
-        background: blanchedalmond;
-    }
-    .mySlides {display:none}
-    .w3-left, .w3-right, .w3-badge {cursor:pointer}
-    .w3-badge {height:13px;width:13px;padding:0}
+      .my-navbar-menu{
+        padding-left: 20px;
+      }
+
+      /* image slider */
+      @import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+/* html, body { background: #333 url("https://codepen.io/images/classy_fabric.png"); } */
+
+.slides {
+    padding: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+	  opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+	width: 100%;
+	bottom: 9px;
+	height: 11px;
+	display: block;
+	position: absolute;
+	text-align: center;
+}
+
+.nav-dots .nav-dot {
+	top: -5px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+	background: rgba(0, 0, 0, 0.8);
+}
+.my-slider{
+  width:100%;
+  max-height: 300px;
+}
+.my-slider-nav{
+  max-height:300px;
+}
+.my-content-part{
+  margin:0px 20px;
+}
+.my-footer{
+  border-top:1px solid silver;
+  padding: 10px 0px;
+}
+.my-navbar{
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  z-index:12;
+}
+.my-sidebar{
+  position: fixed;
+  width:250px;
+  height:100%;
+  background: rgba(224, 222, 222, 0.9);
+  z-index:11;
+  padding: 60px 5px 50px 20px;
+}
+      /* /image slider */
     </style>
   </head>
   <body>
-      <header class="header test1">
-          <div class="columns">
-              <div class="column is-1 test">1</div>
-              <div class="column is-2 test">LOGO</div>
-              <div class="column is-2 test">SERVICES</div>
-              <div class="column is-2 test">Contact Us</div>
-              <div class="column is-2 test">States</div>
+     <!-- nav-bar starts -->
+     <div class="my-navbar">
+      <nav class="navbar is-light">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+              <i class="fa fa-bars"></i>
+              </a>
+          <a class="navbar-item" href="#">
+            MoDoNER
+          </a>
+          <div class="navbar-burger burger" data-target="myNavbar">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-      </header>
-  <section class="section">
-    <div class="container is-fluid">
-            <div class="w3-content w3-display-container" style="max-width:2000px;max-height:400px;margin:-34px -55px 0px -55px;">
-                    <img class="mySlides" src="1.jpg" style="width:2000px;height:400px;">
-                    <img class="mySlides" src="2.jpg" style="width:2000px;height:400px;">
-                    <img class="mySlides" src="3.jpg" style="width:2000px;height:400px;">
-                    <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                      <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-                      <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-                      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-                      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-                      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-                    </div>
+        </div>
+      
+        <div id="myNavbar" class="navbar-menu my-navbar-menu">
+          <div class="navbar-start">
+           
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link" href="#">
+                Services
+              </a>
+              <div class="navbar-dropdown is-boxed">
+                <a class="navbar-item" href="#">
+                  R.T.I.
+                </a>
+                <a class="navbar-item" href="#">
+                  Publications
+                </a>
+                <a class="navbar-item" href="#">
+                  Advertisement
+                </a>
+                <a class="navbar-item" href="#">
+                  Events
+                </a>
+               
+              </div>
             </div>
+            
+              <a href="#" class="navbar-item">States</a>
+              
+              <a href="#" class="navbar-item">Contact Us</a>
+           
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="field ">
+                <p class="control">
+                  <a class="button is-link is-outlined" target="_blank" href="#">
+                    <span class="icon">
+                      <i class="fa fa-map-marker"></i>
+                    </span>
+                    <span>
+                      Maps
+                    </span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+     </div>
+     <!-- nav-bar ends -->
+     <!-- left sidebar -->
+     <div class="my-sidebar">
+        <aside class="menu">
+            <p class="menu-label">
+              General
+            </p>
+            <ul class="menu-list">
+              <li><a>Dashboard</a></li>
+              <li><a>Customers</a></li>
+            </ul>
+            <p class="menu-label">
+              Administration
+            </p>
+            <ul class="menu-list">
+              <li><a>Team Settings</a></li>
+              <li>
+                <a class="is-active">Manage Your Team</a>
+                <ul>
+                  <li><a>Members</a></li>
+                  <li><a>Plugins</a></li>
+                  <li><a>Add a member</a></li>
+                </ul>
+              </li>
+              <li><a>Invitations</a></li>
+              <li><a>Cloud Storage Environment Settings</a></li>
+              <li><a>Authentication</a></li>
+            </ul>
+            <p class="menu-label">
+              Transactions
+            </p>
+            <ul class="menu-list">
+              <li><a>Payments</a></li>
+              <li><a>Transfers</a></li>
+              <li><a>Balance</a></li>
+            </ul>
+          </aside>
+     </div>
+     <!-- /left sidebar -->
+     <br><br>
+     <!-- image slider starts -->
+     <div>
+     <ul class="slides my-slider">
+        <input type="radio" name="radio-btn" id="img-1" checked />
+        <li class="slide-container">
+        <div class="slide my-slider">
+          <img src="http://farm9.staticflickr.com/8072/8346734966_f9cd7d0941_z.jpg" />
+            </div>
+        <div class="nav my-slider-nav">
+          <label for="img-6" class="prev">&#x2039;</label>
+          <label for="img-2" class="next">&#x203a;</label>
+        </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-2" />
+        <li class="slide-container">
+            <div class="slide my-slider">
+              <img src="http://farm9.staticflickr.com/8504/8365873811_d32571df3d_z.jpg" />
+            </div>
+        <div class="nav my-slider-nav">
+          <label for="img-1" class="prev">&#x2039;</label>
+          <label for="img-3" class="next">&#x203a;</label>
+        </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-3" />
+        <li class="slide-container">
+            <div class="slide my-slider">
+              <img src="http://farm9.staticflickr.com/8068/8250438572_d1a5917072_z.jpg" />
+            </div>
+        <div class="nav my-slider-nav">
+          <label for="img-2" class="prev">&#x2039;</label>
+          <label for="img-4" class="next">&#x203a;</label>
+        </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-4" />
+        <li class="slide-container">
+            <div class="slide my-slider">
+              <img src="http://farm9.staticflickr.com/8061/8237246833_54d8fa37f0_z.jpg" />
+            </div>
+        <div class="nav my-slider-nav">
+          <label for="img-3" class="prev">&#x2039;</label>
+          <label for="img-5" class="next">&#x203a;</label>
+        </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-5" />
+        <li class="slide-container">
+            <div class="slide my-slider">
+              <img src="http://farm9.staticflickr.com/8055/8098750623_66292a35c0_z.jpg" />
+            </div>
+        <div class="nav my-slider-nav">
+          <label for="img-4" class="prev">&#x2039;</label>
+          <label for="img-6" class="next">&#x203a;</label>
+        </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-6" />
+        <li class="slide-container">
+            <div class="slide my-slider" >
+              <img src="http://farm9.staticflickr.com/8195/8098750703_797e102da2_z.jpg" />
+            </div>
+        <div class="nav my-slider-nav">
+          <label for="img-5" class="prev">&#x2039;</label>
+          <label for="img-1" class="next">&#x203a;</label>
+        </div>
+        </li>
+    
+        <li class="nav-dots">
+          <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+          <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+          <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+          <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+          <label for="img-5" class="nav-dot" id="img-dot-5"></label>
+          <label for="img-6" class="nav-dot" id="img-dot-6"></label>
+        </li>
+    </ul>
     </div>
-  </section>
-  <footer>foot</footer>
+     <!-- image slider ends -->
+    <br>
+     <!-- main content  -->
+     <div class="box my-content-part"   >
+       <p>
+          The Ministry of Development of North Eastern Region is responsible for the matters relating to the planning, execution and monitoring of development schemes and projects in the North Eastern Region. Its vision is to accelerate the pace of socio-economic development of the Region so that it may enjoy growth parity with the rest of the country.
+       </p>
+     </div>
+     <!-- /main content -->
+     <br><br>
+     <!-- footer -->
+     <div class="my-footer">
+       
+        <div class="my-footer-up my-content-part">
+            <div class="columns">
+                <div class="column">
+                  <div class="box">
+                    first
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="box">
+                    second
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="box">
+                    last
+                  </div>
+                </div>
+              </div>
+        </div>
+        <br>
+        <div class="my-footer-end">
+          <div class="box my-content-part">
+            &copy Piet.pvt.ltd
+          </div>
+        </div>
+     </div>
+     <!-- /footer -->
   </body>
   <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-        
-        function plusDivs(n) {
-          showDivs(slideIndex += n);
-        }
-        
-        function currentDiv(n) {
-          showDivs(slideIndex = n);
-        }
-        
-        function showDivs(n) {
-          var i;
-          var x = document.getElementsByClassName("mySlides");
-          var dots = document.getElementsByClassName("demo");
-          if (n > x.length) {slideIndex = 1}    
-          if (n < 1) {slideIndex = x.length}
-          for (i = 0; i < x.length; i++) {
-             x[i].style.display = "none";  
-          }
-          for (i = 0; i < dots.length; i++) {
-             dots[i].className = dots[i].className.replace(" w3-white", "");
-          }
-          x[slideIndex-1].style.display = "block";  
-          dots[slideIndex-1].className += " w3-white";
-        }
-        </script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+  </script>
 </html>

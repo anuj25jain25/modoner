@@ -146,24 +146,94 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
   height: 50px;
   width: 100%;
   z-index:12;
+  box-shadow: 1px 0px 25px #333;
 }
-.my-sidebar{
-  position: fixed;
-  width:250px;
-  height:100%;
-  background: rgba(224, 222, 222, 0.9);
-  z-index:11;
-  padding: 60px 5px 50px 20px;
+.sidebar-design {
+ background: rgba(37, 36, 36, 0.9);
+ position: fixed;
+ left: -65%;
+ left: -260px;
+ width: 240px;
+ height: 100%;
+ box-shadow: 1px 0px 25px #333;
+ transition: left 0.5s;
+ z-index: 11; }
+  
+.sidebar-first-ul {
+ color: white;
+ font-size: 20px; }
+
+.sidebar-first-ul li {
+ padding: 10px; }
+
+.sidebar-first-ul ul {
+ margin-left: 10%; }
+
+.sidebar-first-ul li:hover {
+ background: #333;
+ cursor: pointer;
+ border-left: 3px solid white; }
+
+.sidebar-second-ul {
+ margin-left: 20px;
+ font-size: 18px; }
+.sidebar-third-ul {
+ margin-left: 20px;
+ font-size: 17px; }
+
+.sidebar-second-ul li, .sidebar-third-ul li {
+  border-left: 1px solid rgba(100, 94, 94, 0.623); }
+
+.sidebar-second-ul li:hover {
+  border-left: 3px solid white;}
+  
+.sidebar-first-ul ul ul {
+  margin-left: 15%; }
+.sidebar-third-ul li:hover {
+  border-left: 3px solid white; }
+
+.sidebar-first-ul li:hover .sidebar-add-icon {
+  color: #289628; }
+
+.sidebar-first-ul li:hover .sidebar-remove-icon {
+  color: red; }
+
+.sidebar-add-icon, .sidebar-remove-icon {
+  float: left;
+  margin-right: 10px; }
+
+.sidebar-down-icon, .sidebar-up-icon {
+  float: right; }
+    /* /image slider */
+
+.states-card{
+  position: static !important;
+  display: inline-block;
+  width:300px;
+  margin: 10px;
+  font-size: 12px;
 }
-      /* /image slider */
+.states-card-image{
+ margin:5px;
+}
     </style>
+     <script>
+      function hideMe() {
+        if (document.querySelector("#sideBar").style.left == "0px") {
+          document.querySelector("#sideBar").style.left = "-260px";
+        }
+        else {
+          document.querySelector("#sideBar").style.left = "0px";
+        }
+      }
+    </script>
   </head>
   <body>
      <!-- nav-bar starts -->
      <div class="my-navbar">
       <nav class="navbar is-light">
         <div class="navbar-brand">
-            <a class="navbar-item" href="#">
+            <a class="navbar-item" onclick="hideMe()" >
               <i class="fa fa-bars"></i>
               </a>
           <a class="navbar-item" href="#">
@@ -227,42 +297,54 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
      </div>
      <!-- nav-bar ends -->
      <!-- left sidebar -->
-     <div class="my-sidebar">
-        <aside class="menu">
-            <p class="menu-label">
-              General
-            </p>
-            <ul class="menu-list">
-              <li><a>Dashboard</a></li>
-              <li><a>Customers</a></li>
-            </ul>
-            <p class="menu-label">
-              Administration
-            </p>
-            <ul class="menu-list">
-              <li><a>Team Settings</a></li>
-              <li>
-                <a class="is-active">Manage Your Team</a>
-                <ul>
-                  <li><a>Members</a></li>
-                  <li><a>Plugins</a></li>
-                  <li><a>Add a member</a></li>
-                </ul>
-              </li>
-              <li><a>Invitations</a></li>
-              <li><a>Cloud Storage Environment Settings</a></li>
-              <li><a>Authentication</a></li>
-            </ul>
-            <p class="menu-label">
-              Transactions
-            </p>
-            <ul class="menu-list">
-              <li><a>Payments</a></li>
-              <li><a>Transfers</a></li>
-              <li><a>Balance</a></li>
-            </ul>
-          </aside>
-     </div>
+      <!-- left side-bar starts -->
+
+  <div id="sideBar" class="sidebar-design">
+    <a class="navbar-item" href="#">
+      <i class="fa fa-chevron-left fa-2x sidebar-close" onclick="hideMe()"></i>
+    </a>
+    <br>
+    <ul class="sidebar-first-ul">
+      <li>
+        Event Types
+        <span class="sidebar-down-icon" class="sidebar-icon">
+          <i class="fa fa-angle-up" aria-hidden="true"></i>
+        </span>
+
+      </li>
+      <ul class="sidebar-second-ul">
+        <li>
+          Competitions
+          <span class="sidebar-down-icon" class="sidebar-icon">
+            <i class="fa fa-angle-up" aria-hidden="true"></i>
+          </span>
+        </li>
+        <ul class="sidebar-third-ul">
+          <li>
+            Event1
+          </li>
+          <li>
+            Event2
+          </li>
+          <li>
+            Event3
+          </li>
+        </ul>
+        <li>
+          Competitions
+          <span class="sidebar-down-icon" class="sidebar-icon">
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </span>
+        </li>
+        <li>
+          Competitions
+          <span class="sidebar-down-icon" class="sidebar-icon">
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </span>
+        </li>
+      </ul>
+    </ul>
+  </div>
      <!-- /left sidebar -->
      <br><br>
      <!-- image slider starts -->
@@ -347,10 +429,55 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
      <!-- image slider ends -->
     <br>
      <!-- main content  -->
+     <div class="my-section">
      <div class="box my-content-part"   >
        <p>
           The Ministry of Development of North Eastern Region is responsible for the matters relating to the planning, execution and monitoring of development schemes and projects in the North Eastern Region. Its vision is to accelerate the pace of socio-economic development of the Region so that it may enjoy growth parity with the rest of the country.
        </p>
+     </div>
+     <div>
+       <center>
+      <div class="card states-card">
+        <div class="card-image">
+          <figure class="image states-card-image">
+            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">Assam</p>
+            </div>
+          </div>
+      
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris.
+          </div>
+        </div>
+      </div>
+      <!-- modal for card -->
+      <div class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Assam<p>
+              <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+              <!-- Content ... -->
+            </section>
+            <footer class="modal-card-foot">
+            </footer>
+          </div>
+        </div>
+      <!-- /modal for card -->
+      </center>
+     </div>
+     <br>
+
      </div>
      <!-- /main content -->
      <br><br>

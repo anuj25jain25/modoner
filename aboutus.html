@@ -1,0 +1,99 @@
+<div>
+    <div class="tabs is-centered is-boxed is-medium">
+        <ul>
+          <li ng-click="setHss()" ng-class="{'is-active':hss=='true'}">
+            <a>
+              <span class="icon is-small"><i class="fa fa-image"></i></span>
+              <span>Hindi Salahakar Samiti</span>
+            </a>
+          </li>
+          <li ng-click="setWwd()" ng-class="{'is-active':wwd=='true'}">
+            <a>
+              <span class="icon is-small"><i class="fa fa-music"></i></span>
+              <span>Who's who Doner</span>
+            </a>
+          </li>
+          <li ng-click="setAbr()" ng-class="{'is-active':abr=='true'}">
+            <a>
+              <span class="icon is-small"><i class="fa fa-film"></i></span>
+              <span>Allocation of Buisness Rules</span>
+            </a>
+          </li>
+          <li ng-click="setMd()" ng-class="{'is-active':md=='true'}">
+            <a>
+              <span class="icon is-small"><i class="fa fa-file-text-o"></i></span>
+              <span>Minister, DoNER</span>
+            </a>
+          </li>
+          <li ng-click="setAct()" ng-class="{'is-active':act=='true'}">
+            <a>
+              <span class="icon is-small"><i class="fa fa-file-text-o"></i></span>
+              <span>Activities</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div ng-switch on="state">
+        <div ng-switch-when="hss">
+
+        </div>
+        <div ng-switch-when="wwd">
+            
+        </div>
+        <div ng-switch-when="abr">
+            
+        </div>
+        <div ng-switch-when="md">
+            <article class="media">
+                <figure class="media-left">
+                  <p class="image is-128x128">
+                    <img src="jitendra.jpg">
+                  </p>
+                </figure>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong>Dr. Jitendra Singh</strong> <small>MBBS (Stanley, Chennai)</small> <small>MD Medicine, Fellowship (AIIMS, NDL)
+                        MNAMS Diabetes & Endocrinology,</small>
+                      <br>
+                      Dr. Jitendra Singh is a popular Diabetes specialist of international repute, Professor Diabetes and Endocrinology, noted intellectual, author, invited faculty to all the major national and South-Asia Diabetes conferences and a social activist.
+                    </p>
+                  </div>
+                  <nav class="level is-mobile">
+                    <div class="level-left">
+                      <a class="level-item">
+                        <span class="icon is-small"><i class="fa fa-reply"></i></span>
+                      </a>
+                      <a class="level-item">
+                        <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+                      </a>
+                      <a class="level-item">
+                        <span class="icon is-small"><i class="fa fa-heart"></i></span>
+                      </a>
+                    </div>
+                  </nav>
+                </div>
+                <div class="media-right">
+                </div>
+              </article>
+        </div>
+        <div ng-switch-when="act">
+            <ol class="act-list" type="1">
+                <li>1. Non Lapsable Central Pool of Resources (NLCPR)</li>
+                <li>2. North Eastern Council</li>
+                <li>3. Social and Infrastructure Development Fund (SIDF) – Finance Minister's Package for NER, 2008-09
+                </li>
+                <li>4. North Eastern Regional Agricultural Marketing Corporation Ltd (NERAMAC)
+                </li>
+                <li>5. North Eastern Handicrafts and Handlooms Development Corporation (NEHHDC)
+                </li>
+                <li>6. North East Development Finance Corporation Ltd. (NEDFi)
+                </li>
+                <li>7. Plan Scheme of 'Advocacy & Publicity'
+                </li>
+                <li>8. Plan Scheme of 'Capacity Building & Technical Assistance (CB&TA)'
+                </li>
+            </ol>
+        </div>
+      </div>
+</div>

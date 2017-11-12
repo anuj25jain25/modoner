@@ -1,0 +1,231 @@
+.my-navbar-menu {
+    padding-left: 20px;
+  }
+
+  /* image slider */
+
+  @import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+  /* html, body { background: #333 url("https://codepen.io/images/classy_fabric.png"); } */
+
+  .slides {
+    padding: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  .slides input {
+    display: none;
+  }
+
+  .slide-container {
+    display: block;
+  }
+
+  .slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+  }
+
+  .slide:hover+.nav label {
+    opacity: 0.5;
+  }
+
+  .nav label:hover {
+    opacity: 1;
+  }
+
+  .nav .next {
+    right: 0;
+  }
+
+  input:checked+.slide-container .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+  }
+
+  input:checked+.slide-container .nav label {
+    display: block;
+  }
+
+  .nav-dots {
+    width: 100%;
+    bottom: 9px;
+    height: 11px;
+    display: block;
+    position: absolute;
+    text-align: center;
+  }
+
+  .nav-dots .nav-dot {
+    top: -5px;
+    width: 11px;
+    height: 11px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .nav-dots .nav-dot:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  input#img-1:checked~.nav-dots label#img-dot-1,
+  input#img-2:checked~.nav-dots label#img-dot-2,
+  input#img-3:checked~.nav-dots label#img-dot-3,
+  input#img-4:checked~.nav-dots label#img-dot-4,
+  input#img-5:checked~.nav-dots label#img-dot-5,
+  input#img-6:checked~.nav-dots label#img-dot-6 {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .my-slider {
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .my-slider-nav {
+    max-height: 300px;
+  }
+
+  .my-content-part {
+    margin: 0px 20px;
+  }
+
+  .my-footer {
+    border-top: 1px solid silver;
+    padding: 10px 0px;
+  }
+
+  .my-navbar {
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    z-index: 12;
+    box-shadow: 1px 0px 25px #333;
+  }
+
+  .sidebar-design {
+    background: rgba(37, 36, 36, 0.9);
+    position: fixed;
+    left: -65%;
+    left: -260px;
+    width: 240px;
+    height: 100%;
+    box-shadow: 1px 0px 25px #333;
+    transition: left 0.5s;
+    z-index: 11;
+    overflow-y: auto;
+  }
+
+  .sidebar-first-ul {
+    color: white;
+    font-size: 18px;
+  }
+
+  .sidebar-first-ul li {
+    padding: 10px;
+  }
+
+  .sidebar-first-ul ul {
+    margin-left: 10%;
+  }
+
+  .sidebar-first-ul li:hover {
+    background: #333;
+    cursor: pointer;
+    border-left: 3px solid white;
+  }
+
+  .sidebar-second-ul {
+    margin-left: 20px;
+    font-size: 17px;
+  }
+
+
+  .sidebar-second-ul li{
+    border-left: 1px solid rgba(100, 94, 94, 0.623);
+  }
+
+  .sidebar-second-ul li:hover {
+    border-left: 3px solid white;
+  }
+
+  .sidebar-down-icon,
+  .sidebar-up-icon {
+    float: right;
+  }
+
+  /* /image slider */
+
+  .states-card {
+    position: static !important;
+    display: inline-table;
+    width: 300px;
+    margin: 10px;
+    font-size: 12px;
+  }
+
+  .states-card-image {
+    margin: 5px;
+  }
+  .about-us{
+    font-size: 14px;
+    color:grey;
+    text-align: center;
+  }
+  .act-list li{
+    padding:10px;
+  }

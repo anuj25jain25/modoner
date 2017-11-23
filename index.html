@@ -5,6 +5,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MoDoNER</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -47,16 +64,16 @@
               Services
             </a>
             <div class="navbar-dropdown is-boxed">
-              <a class="navbar-item" href="#">
+              <a class="navbar-item" href="#!/rti">
                 R.T.I.
               </a>
-              <a class="navbar-item" href="#">
+              <a class="navbar-item" href="#!/publications">
                 Publications
               </a>
-              <a class="navbar-item" href="#">
-                Advertisement
+              <a class="navbar-item" href="http://mdoner.gov.in/sites/default/files/logo_design_0.docx">
+                Advertisement File (download)
               </a>
-              <a class="navbar-item" href="#">
+              <a class="navbar-item" href="#!/events">
                 Events
               </a>
 
@@ -65,7 +82,7 @@
 
           <a href="#!/states" class="navbar-item">States</a>
 
-          <a href="#" class="navbar-item">Contact Us</a>
+          <a href="#!/contactUs" class="navbar-item">Contact Us</a>
 
         </div>
 
@@ -73,7 +90,7 @@
           <div class="navbar-item">
             <div class="field ">
               <p class="control">
-                <a class="button is-link is-outlined" target="_blank" href="#">
+                <a class="button is-link is-outlined" id="map-tog" data-target="map-pop">
                   <span class="icon">
                     <i class="fa fa-map-marker"></i>
                   </span>
@@ -89,23 +106,88 @@
     </nav>
   </div>
   <!-- nav-bar ends -->
-  <!-- left sidebar -->
+  <!-- maps -->
+  <div class="modal" id="map-pop">
+    <div class="modal-background"></div>
+    <div class="modal-content" style="height:80%;width:80%;">
+      <!-- Any other Bulma elements you want -->
+      <center>
+        Select the following region for respective map
+      </center>
+      <br><br>
+      <center>
+      <div class="map-row-1" id="map-btn" data-target="nercorp">NERCORMP Project Districts</div>
+      <div class="is-hidden" id="nercorp">
+          <img alt="" src="images/northeast.jpg" style="width: 700px; height: 495px;">
+      </div>
+      <div class="map-row-1" id="map-btn" data-target="ner">NE Region</div>
+      <div class="is-hidden" id="ner">
+          <img alt="" src="images/NE_Region.jpg" style="width: 700px; height: 495px;">
+      </div>
+      </center>
+      <br>
+      <center>
+      <div class="map-row-2" id="map-btn" data-target="arun">Arunachal Pradesh</div>
+      <div class="is-hidden" id="arun">
+          <img alt="" src="images/Arunachal_Pradesh2.jpg" style="width: 700px; height: 495px;">
+      </div>
+      <div class="map-row-2" id="map-btn" data-target="ass">Assam</div>
+      <div class="is-hidden" id="ass">
+          <img alt="" src="images/Assam.jpg" style="width: 700px; height: 495px;">
+      </div>
+      <div class="map-row-2" id="map-btn" data-target="mani">Manipur</div>
+      <div class="is-hidden" id="mani">
+          <img alt="" src="images/Manipur-map.jpg" style="width: 700px; height: 495px;">
+      </div>
+      <div class="map-row-2" id="map-btn" data-target="megh">Meghalaya</div>
+      <div class="is-hidden" id="megh">
+          <img alt="" src="images/Meghalaya-map.jpg" style="width: 700px; height: 495px;">
+      </div>
+      <div class="map-row-2" id="map-btn" data-target="miz">Mizoram</div>
+      <div class="is-hidden" id="miz">
+          <img alt="" src="images/Mizoram-map.jpg" style="width: 700px; height: 495px;">
+      </div>
+      <div class="map-row-2" id="map-btn" data-target="nag">Nagaland</div>
+      <div class="is-hidden" id="nag">
+          <img alt="" src="images/Nagaland-map.jpg" style="width: 700px; height: 495px;">
+      </div>
+      <div class="map-row-2"  id="map-btn" data-target="sik">Sikkim</div>
+      <div class="is-hidden" id="sik">
+          <img alt="" src="images/Sikkim-map.jpg" style="width: 700px; height: 495px;">
+      </div>
+      <div class="map-row-2" id="map-btn" data-target="trip">Tripura</div>
+      <div class="is-hidden"id="trip">
+          <img alt="" src="images/Tripura-map.jpg" style="width: 700px; height: 495px;">
+      </div>
+      </center>
+      <br>
+      <center>
+      <div class="map-row-3" id="map-btn" data-target="forest">Forest Area</div>
+      <div class="is-hidden" id="forest">
+          <img alt="" src="images/Forest_cover.jpg" style="width: 700px; height: 495px;">
+      </div>
+      </center>
+    </div>
+    <button class="modal-close is-large" aria-label="close" id="map-tog" data-target="map-pop"></button>
+  </div>
+  <!-- /maps -->
   <!-- left side-bar starts -->
 
-  <div id="sideBar" class="sidebar-design" ng-controller="sidebar">
+  <div id="sideBar" class="sidebar-design mostly-customized-scrollbar" ng-controller="sidebar">
     <a class="navbar-item" href="#">
       <i class="fa fa-chevron-left fa-2x sidebar-close" onclick="hideMe()"></i>
     </a>
     <br>
     <ul class="sidebar-first-ul">
-      <li ng-repeat="(key,value) in activities">
+      <li ng-repeat="(key,value) in activities" id="dropbar-btn" data-target={{key}}>
         {{key}}
-        <span class="sidebar-down-icon" class="sidebar-icon" ng-click="">
+        <span class="sidebar-down-icon" class="sidebar-icon">
           <i class="fa fa-angle-down" aria-hidden="true"></i>
         </span>
-        <ul class="sidebar-second-ul is-hidden" ng-repeat="(keyy,val) in value">
-          <li>
-            {{keyy}}            
+        <ul class="sidebar-second-ul is-hidden" id={{key}}>
+          <li ng-repeat="keyy in value">
+            <a href={{keyy.link}}>{{keyy.name}}</a>
+            
           </li>
         </ul>
       </li>
@@ -115,12 +197,12 @@
   <br>
   <br>
   <!-- image slider starts -->
-  <div>
+  <div class="image-slide-position">
     <ul class="slides my-slider">
       <input type="radio" name="radio-btn" id="img-1" checked />
       <li class="slide-container">
         <div class="slide my-slider">
-          <img src="http://farm9.staticflickr.com/8072/8346734966_f9cd7d0941_z.jpg" />
+          <img src="11.jpg" />
         </div>
         <div class="nav my-slider-nav">
           <label for="img-6" class="prev">&#x2039;</label>
@@ -131,7 +213,7 @@
       <input type="radio" name="radio-btn" id="img-2" />
       <li class="slide-container">
         <div class="slide my-slider">
-          <img src="http://farm9.staticflickr.com/8504/8365873811_d32571df3d_z.jpg" />
+          <img src="22.jpg" />
         </div>
         <div class="nav my-slider-nav">
           <label for="img-1" class="prev">&#x2039;</label>
@@ -142,7 +224,7 @@
       <input type="radio" name="radio-btn" id="img-3" />
       <li class="slide-container">
         <div class="slide my-slider">
-          <img src="http://farm9.staticflickr.com/8068/8250438572_d1a5917072_z.jpg" />
+          <img src="33.jpg" />
         </div>
         <div class="nav my-slider-nav">
           <label for="img-2" class="prev">&#x2039;</label>
@@ -153,7 +235,7 @@
       <input type="radio" name="radio-btn" id="img-4" />
       <li class="slide-container">
         <div class="slide my-slider">
-          <img src="http://farm9.staticflickr.com/8061/8237246833_54d8fa37f0_z.jpg" />
+          <img src="44.jpg" />
         </div>
         <div class="nav my-slider-nav">
           <label for="img-3" class="prev">&#x2039;</label>
@@ -164,7 +246,7 @@
       <input type="radio" name="radio-btn" id="img-5" />
       <li class="slide-container">
         <div class="slide my-slider">
-          <img src="http://farm9.staticflickr.com/8055/8098750623_66292a35c0_z.jpg" />
+          <img src="55.jpg" />
         </div>
         <div class="nav my-slider-nav">
           <label for="img-4" class="prev">&#x2039;</label>
@@ -175,7 +257,7 @@
       <input type="radio" name="radio-btn" id="img-6" />
       <li class="slide-container">
         <div class="slide my-slider">
-          <img src="http://farm9.staticflickr.com/8195/8098750703_797e102da2_z.jpg" />
+          <img src="33.jpg" />
         </div>
         <div class="nav my-slider-nav">
           <label for="img-5" class="prev">&#x2039;</label>
@@ -192,12 +274,19 @@
         <label for="img-6" class="nav-dot" id="img-dot-6"></label>
       </li>
     </ul>
+    <div class="web-title">
+      <center>
+        <h1 class="title">
+          Ministry of Development of North East Region
+        </h1>
+      </center>
+    </div>
   </div>
   <!-- image slider ends -->
   <br>
   <!-- main content  -->
   <div class="my-section" ng-view>
-    
+
 
   </div>
   <!-- /main content -->
@@ -209,32 +298,81 @@
     <div class="my-footer-up my-content-part">
       <div class="columns">
         <div class="column">
-          <div class="box">
-            first
+          <center>
+            <h1 class="subtitle">
+              Photo Gallery
+            </h1>
+          </center>
+          <div class="my-gallery">
+            <div>
+              <img src="55.jpg" alt>
+            </div>
+            <div>
+              <img src="11.jpg" alt>
+            </div>
+            <div>
+              <img src="22.jpg" alt>
+            </div>
+            <div>
+              <img src="33.jpg" alt>
+            </div>
           </div>
         </div>
         <div class="column">
           <h1 class="subtitle">
-            <center><a href="#!/aboutus">About Us</a></center>
+            <center>
+              <a href="#!/aboutus">About Us</a>
+            </center>
             <hr>
             <p class="about-us">
-            The Ministry of Development of North Eastern Region (MDoNER) is a Government of India ministry, established in September 2001, which functions as the nodal Department of the Central Government to deal with matters related to the socio-economic development of the eight States of Northeast India, Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Tripura and Sikkim. It acts as a facilitator between the Central Ministries/ Departments and the State Governments of the North Eastern Region in the economic development including removal of infrastructural bottlenecks, provision of basic minimum services, creating an environment for private investment and to remove impediments to lasting peace and security in the North Eastern Region.
+              The Ministry of Development of North Eastern Region (MDoNER) is a Government of India ministry, established in September
+              2001, which functions as the nodal Department of the Central Government to deal with matters related to the
+              socio-economic development of the eight States of Northeast India, Arunachal Pradesh, Assam, Manipur, Meghalaya,
+              Mizoram, Nagaland, Tripura and Sikkim.
             </p>
           </h1>
         </div>
-        <div class="column">
-          <div class="box">
-            last
-          </div>
+        <div class="column is-2 is-offset-2">
+
+          <a class="india-gov" target="_blank" title="http://mygov.in/, The National Portal of India : External website that opens in a new window"
+            href="http://mygov.in/">
+            <img class="india-gov" alt="http://mygov.in, The National Portal of India : External website that opens in a new window"
+              src="images/mygov-link1.jpg" />
+          </a>
+          <br>
+          <a class="india-gov" title="http://india.gov.in, The National Portal of India : External website that opens in a new window"
+            href="http://india.gov.in/">
+            <img class="india-gov" alt="http://india.gov.in, The National Portal of India : External website that opens in a new window"
+              src="images/mygov-link2.jpg" />
+          </a>
+          <br>
+          <a class="india-gov" title="http://digitalindia.gov.in, Digital India : External website that opens in a new window" href="http://digitalindia.gov.in/">
+            <img class="india-gov" alt="http://digitalindia.gov.in, Digital India : External website that opens in a new window" src="images/mygov-link3.jpg"
+            />
+          </a>
+
+
         </div>
       </div>
     </div>
     <br>
-    <div class="my-footer-end">
-      <div class="box my-content-part">
-        &copy Piet.pvt.ltd
-      </div>
+    <div class="footer-end">
+      &copy M/o DONER
+
+      <span class="links">
+        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+      </span>
+      <span class="links">
+        <i class="fa fa-google-plus-official" aria-hidden="true"></i>
+      </span>
+      <span class="links">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </span>
+      <span class="links">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </span>
     </div>
+
   </div>
   <!-- /footer -->
 </body>
@@ -262,6 +400,65 @@
           // Toggle the class on both the "navbar-burger" and the "navbar-menu"
           $el.classList.toggle('is-active');
           $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+
+    // Get all "navbar-burger" elements
+    var $mapButtons = Array.prototype.slice.call(document.querySelectorAll('#map-btn'), 0);
+
+    // Check if there are any navbar burgers
+    if ($mapButtons.length > 0) {
+
+      // Add a click event on each of them
+      $mapButtons.forEach(function ($el) {
+        $el.addEventListener('click', function () {
+
+          // Get the target from the "data-target" attribute
+          var target = $el.dataset.target;
+          var $target = document.getElementById(target);
+
+          // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+          $el.classList.toggle('is-on');
+          $target.classList.toggle('is-hidden');
+
+        });
+      });
+    }
+
+    var $mapToggle = Array.prototype.slice.call(document.querySelectorAll('#map-tog'), 0);
+    if ($mapToggle.length > 0) {
+
+      // Add a click event on each of them
+      $mapToggle.forEach(function ($el) {
+        $el.addEventListener('click', function () {
+
+          // Get the target from the "data-target" attribute
+          var target = $el.dataset.target;
+          var $target = document.getElementById(target);
+
+          // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+    var $dropbarBtn = Array.prototype.slice.call(document.querySelectorAll('#dropbar-btn'), 0);
+    if ($dropbarBtn.length > 0) {
+
+      // Add a click event on each of them
+      $dropbarBtn.forEach(function ($el) {
+        $el.addEventListener('click', function () {
+
+          // Get the target from the "data-target" attribute
+          var target = $el.dataset.target;
+          var $target = document.getElementById(target);
+
+          // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        
+          $target.classList.toggle('is-hidden');
 
         });
       });

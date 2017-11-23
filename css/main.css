@@ -281,6 +281,9 @@
     font-size: 30px;
     margin: -12px 10px 0px 10px;
   }
+  .links a i:hover{
+    color:rgb(78, 78, 247);
+  }
 
   .mostly-customized-scrollbar::-webkit-scrollbar {
     width: 5px;
